@@ -14,7 +14,7 @@ To run the tests in the root of the project run **"docker-compose -f docker-comp
 
 If for some reason the tests do not run inside the container go the the api folder and run **"npm install"** to install dependencies, then run **"docker-compose up --build"** and when all the containers are up and running run **"npm run local-tests"** 
 
-If this does not work as well after all the containers are up and running with **"docker-compose up --build"** open a bash session in the api container with **"docker exec -it api bash"** and in the bash run "npm test"
+If this does not work as well after all the containers are up and running with **"docker-compose up --build"** open a bash session in the api container with **"docker exec -it api bash"** and in the bash run **"npm test"**
 
 ## Development Environment
 
