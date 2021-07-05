@@ -1,0 +1,66 @@
+version: "3"
+
+services: 
+  api:
+    build: ./api
+    container_name: api
+    environment:
+      - NODE_ENV=development
+      - MYSQL_DATABASE_HOST=database
+      - MYSQL_DATABASE_PWD=sword-pe-2021!
+      - MYSQL_DATABASE_NAME=sword
+      - MYSQL_DATABASE_PORT=3306
+      - MYSQL_DATABASE_USER=sword
+      - API_PORT=3000
+      - DATABASE_HOST=database
+      - SECRET=swordswords2021!3Qdrg?!o2
+      - BROKER_HOST=broker
+      - BROKER_PORT=1883
+
+    command: "npm run dev"
+    volumes: 
+      - ./api/package.json:/opt/sword/api/package.json
+      # - ./api/node_modules:/opt/sword/api/node_modules
+      - ./api/src:/opt/sword/api/src
+
+    ports:
+      - 9002:3000
+
+    depends_on: 
+      - database
+      - broker
+
+  database:
+    container_name: database
+    build: ./database
+    environment:
+      - MYSQL_ROOT_PASSWORD=sword!!
+      - MYSQL_DATABASE=sword
+      - MYSQL_USER=sword
+      - MYSQL_PASSWORD=sword-pe-2021!
+    ports: 
+      - 3306:3306
+
+  fe:
+    container_name: fe
+    build: ./fe
+    environment: 
+      - PORT=3001
+      - REACT_APP_BROKER_HOST=localhost
+      - REACT_APP_BROKER_PORT=8000
+    command: "npm start"
+    ports:
+      - 9003:3001
+    volumes: 
+      - ./fe/sword-web-fe/package.json:/app/package.json
+      # - ./fe/sword-web-fe/node_modules:/app/node_modules
+      - ./fe/sword-web-fe/public:/app/public
+      - ./fe/sword-web-fe/src:/app/src
+
+  broker:
+    build: ./broker
+    container_name: broker
+    ports:
+      - 1883:1883
+      - 9001:9001
+      - 8000:8000

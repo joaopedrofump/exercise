@@ -1,0 +1,28 @@
+.new-task-form {
+    text-align: start !important;
+    max-height: 100%;
+    overflow-y: hidden;
+}
+
+.new-task {
+    resize: none;
+    width: 35%;
+}
+
+.left {
+    margin: 0;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.confirm {
+    margin: 10px 0;
+}
+
+.internal-div {
+    padding: 10px;
+}
+
+.complete-button {
+    margin-left: 10px;
+}

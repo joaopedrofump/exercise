@@ -1,0 +1,19 @@
+.notifications {
+
+    width: 45%;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    background-color: white;
+    box-shadow: 3px 3px 3px #000;
+    padding: 10px;
+    max-height: 50%;
+    overflow-y: scroll;
+    opacity: 1;
+    z-index: 10;
+
+}
+
+.notifications p {
+    margin: 15px 0;
+}

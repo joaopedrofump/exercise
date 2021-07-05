@@ -1,0 +1,49 @@
+.tasks-table {
+    border-collapse: collapse;
+    border-color: coral;
+    width: 100%;
+}
+
+.tasks-table tr {
+    border-bottom: 1px solid coral;
+}
+
+.tasks-table td, .tasks-table th {
+    padding: 8px;
+    text-align: start;
+}
+
+.add-task-button {
+    margin: 0 10px;
+    min-width: 25px;
+    min-height: 25px;
+}
+
+.add-task-form-collapsed {
+    height: 0px;
+    padding: 10px;
+    transition: height 0.3s ease-out;
+}
+
+.add-task-form {
+    transition: height 0.3s ease-in;
+    height: 150px;
+    padding: 10px;
+}
+
+.error {
+    color: red
+}
+
+.main {
+    opacity: 1;
+    transition: opacity 0.3s linear;
+    z-index: 1;
+}
+
+.main-notifications-opened {
+    opacity: 0.4;
+    transition: opacity 0.3s linear;
+    z-index: 1;
+}
+

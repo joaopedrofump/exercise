@@ -1,0 +1,40 @@
+version: "3"
+
+services: 
+  api_t:
+    build: ./api
+    container_name: api_t
+    environment:
+      - NODE_ENV=development
+      - MYSQL_DATABASE_HOST=database_t
+      - MYSQL_DATABASE_PWD=sword-pe-2021!
+      - MYSQL_DATABASE_NAME=sword
+      - MYSQL_DATABASE_PORT=3306
+      - MYSQL_DATABASE_USER=sword
+      - API_PORT=3000
+      - DATABASE_HOST=database_t
+      - SECRET=swordswords2021!3Qdrg?!o2
+      - BROKER_HOST=broker_t
+      - BROKER_PORT=1883
+
+    command: "npm test"
+    volumes: 
+      - ./api/package.json:/opt/sword/api/package.json
+      - ./api/node_modules:/opt/sword/api/node_modules
+      - ./api/src:/opt/sword/api/src
+    depends_on: 
+      - database_t
+      - broker_t
+
+  database_t:
+    container_name: database_t
+    build: ./database
+    environment:
+      - MYSQL_ROOT_PASSWORD=sword!!
+      - MYSQL_DATABASE=sword
+      - MYSQL_USER=sword
+      - MYSQL_PASSWORD=sword-pe-2021!
+
+  broker_t:
+    build: ./broker
+    container_name: broker_t
