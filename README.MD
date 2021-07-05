@@ -20,7 +20,7 @@ If this does not work as well after all the containers are up and running with *
 
 To mount the development environment go to the root of the project and run **"docker-compose up --build"**. Sometimes the api container spins up faster than the database. If that happens, go to some api file and make a change as the api and frontend containers are in watch mode and get recompiled again.
 
-After all the containers are up and running open the browser and go to "localhost:9003". The passwords for testing are all '123456aA!' and the usernames are:
+After all the containers are up and running open the browser and go to "localhost:9003". The passwords for testing are all '123456aA!' (without the quotes) and the usernames are:
 
 	- manager1 (Manager Profile)
 	- manager2 (Manager Profile)
