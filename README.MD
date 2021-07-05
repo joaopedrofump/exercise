@@ -1,6 +1,6 @@
 # Sword practical exercise
 
-Repository to demonstrate the result of practical exercise
+Repository to demonstrate the result of practical exercise.
 
 # Stack
 - NodeJS
@@ -12,22 +12,22 @@ Repository to demonstrate the result of practical exercise
 
 To run the tests in the root of the project run **"docker-compose -f docker-compose-test.yaml up --build"**. In the end run **"docker-compose -f docker-compose-test.yaml down -v"**.
 
-If for some reason the tests do not run inside the container go the the api folder and run **"npm install"** to install dependencies, then run **"docker-compose up --build"** and when all the containers are up and running run **"npm run local-tests"** 
+If for some reason the tests do not run inside the container go the the api folder and run **"npm install"** to install dependencies, then run **"docker-compose up --build"** and when all the containers are up and running run **"npm run local-tests"**.
 
-If this does not work as well after all the containers are up and running with **"docker-compose up --build"** open a bash session in the api container with **"docker exec -it api bash"** and in the bash run **"npm test"**
+If this does not work as well after all the containers are up and running with **"docker-compose up --build"** open a bash session in the api container with **"docker exec -it api bash"** and in the bash run **"npm test"**.
 
 ## Development Environment
 
 To mount the development environment go to the root of the project and run **"docker-compose up --build"**. Sometimes the api container spins up faster than the database. If that happens, go to some api file and make a change as the api and frontend containers are in watch mode and get recompiled again.
 
-After all the containers are up and running open the browser and go to "localhost:9003". The test users are (all passwords are 123456aA!):
+After all the containers are up and running open the browser and go to "localhost:9003". The passwords for testing are all '123456aA!' and the usernames are:
 
-	- manager1
-	- manager2
-	- tech1
-	- tech2
-	- tech3
-	- tech4
+	- manager1 (Manager Profile)
+	- manager2 (Manager Profile)
+	- tech1 (Technician Profile)
+	- tech2 (Technician Profile)
+	- tech3 (Technician Profile)
+	- tech4 (Technician Profile)
 
 **Functionalities implemented**
 
